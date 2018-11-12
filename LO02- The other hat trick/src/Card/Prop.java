@@ -3,7 +3,7 @@ package Card;
 import Player.*;
 
 public class Prop {
-	123
+	
 	private int idProp;
 	private String sIdProp;
 	private String sNameProp;
