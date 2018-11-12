@@ -17,7 +17,7 @@ public class ManageGame {
 	
 	
 	public static void main(String[] args) {
-	/*	Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
 		
 		
 		//Game in console
@@ -40,10 +40,10 @@ public class ManageGame {
 		VirtualPlayer player3 = new VirtualPlayer(2, sName3, iAge3,stategy);
 		
 		Match match = new Match(player1, player2, player3);
-		*/
-		//System.out.println("the players are ready :" + match.getsPlayers() );
+	
+		System.out.println("the players are ready :" + match.getsPlayers() );
 		
-		
+		/*
 		//Game in graphic
 		
 		BeginWindow BeginWind = new BeginWindow();
@@ -79,7 +79,7 @@ public class ManageGame {
 				match.addObserver(viewGraphic);
 				BeginWind.closeWindow();
 			}
-		});
+		});*/
 
 	}
 
