@@ -9,8 +9,7 @@ import Player.*;
 
 public class Turn {
 
-	
-	
+	//Attribute principales 	
 	private Match match;
 	private Player player;
 	private Trick trickOnPerform;
@@ -18,15 +17,14 @@ public class Turn {
 	private ArrayList<Prop> arrPairOfProp = new ArrayList<Prop>();
 	private int iCounterLastRound;
 
-
-
+	//Methode constructeur 
 	public Turn (Match currentMatch,Player currentPlayer) {
 		this.match = currentMatch;
 		this.player = currentPlayer;
 		this.iCounterLastRound =0;
 		this.startTurn();
-		
-	}
+		}
+	//
 	public void startTurn() {
 		this.player.play(this);
 		
@@ -65,6 +63,7 @@ public class Turn {
 	public void setPlayerChosen(Player player) {
 		this.playerChosen = player;
 	}
+	//Methode pour definir si l'on complète un Turn ou le jeu est terminé  
 	public void lastRound(Boolean bResultTurn) {
 		if(bResultTurn) {
 			this.match.setIsEnd(true);

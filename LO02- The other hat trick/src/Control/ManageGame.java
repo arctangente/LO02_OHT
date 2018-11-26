@@ -17,10 +17,11 @@ public class ManageGame {
 	
 	
 	public static void main(String[] args) {
-	/*	Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
 		
 		
 		//Game in console
+		//Etape1: Saisir des données du joueur
 		System.out.println("Veuillez saisir votre nom :");
 		String sNom1 = sc.nextLine();
 		System.out.println("Veuillez saisir votre age" );
@@ -40,13 +41,13 @@ public class ManageGame {
 		VirtualPlayer player3 = new VirtualPlayer(2, sName3, iAge3,stategy);
 		
 		Match match = new Match(player1, player2, player3);
-		*/
-		//System.out.println("the players are ready :" + match.getsPlayers() );
+		
+		System.out.println("the players are ready :" + match.getsPlayers() );
 		
 		
 		//Game in graphic
 		
-		BeginWindow BeginWind = new BeginWindow();
+		/*	BeginWindow BeginWind = new BeginWindow();
 		
 		BeginWind.button.addActionListener(new ActionListener() {
 
@@ -81,6 +82,7 @@ public class ManageGame {
 			}
 		});
 
-	}
+	}  */
 
 }
+	}

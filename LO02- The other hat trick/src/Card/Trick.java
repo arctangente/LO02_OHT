@@ -3,16 +3,16 @@ package Card;
 import java.util.ArrayList;
 
 public class Trick {
-	
+	// Attributes Principales 
 	private int idTrick;
-	private String[] arrIdProps;
-	private int iPointTrick;
-	private String sIdTrick;
+	private String[] arrIdProps;//La liste de composants pour faire le trick 
+	private int iPointTrick;//Le point gagnant si trick réussi 
+	private String sIdTrick;//Le 's' est pour le type 'String'
 	private String sNameTrick;
 	private Boolean isFaceUp;
 	private String sPathFond;
 	
-	
+	//Methode constructeur 
 	public Trick(int idTrick, String sIdTrick,String sNameTrick, String [] arrIdProps, int iPointTrick, String sPathFond) {
 		this.idTrick = idTrick;
 		this.arrIdProps = arrIdProps;
@@ -22,8 +22,8 @@ public class Trick {
 		this.isFaceUp = false;
 		this.sPathFond = sPathFond;
 		
-		
 	}
+	//Methode pour get,set les Attributes 
 	public String getsPathFond() {
 		return sPathFond;
 	}
