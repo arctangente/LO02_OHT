@@ -8,14 +8,14 @@ import Player.Player;
 public class CollectionProps extends ArrayList<Prop> {
 
 	private Match match;
-
+	//Methode pour créer une liste de Prop au début du jeu 
 	public CollectionProps (Match matchActuel, ArrayList<Prop> arrProps) {
 		
 		super();
 		this.match = matchActuel;
 		this.addAll(arrProps);
 	}
-	
+	//Methode pour distribuer les Props aux joueurs au début du jeu 
 	public void distributeProp (ArrayList<Player> arrPlayers) {
 		
 		while (this.match.getCollectionProps().size()>arrPlayers.size()) {
