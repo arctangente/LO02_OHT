@@ -21,29 +21,31 @@ public class ManageGame {
 		
 		
 		//Game in console
-		//Etape1: Saisir des données du joueur
+		//Saisir des données du joueur
 		System.out.println("Veuillez saisir votre nom :");
 		String sNom1 = sc.nextLine();
 		System.out.println("Veuillez saisir votre age" );
 		String sAge1 = sc.nextLine();
 		int iAge1 = Integer.parseInt(sAge1);
+		//Creer l'objet "Joueur Réeel"
 		PhysicalPlayer player1 = new PhysicalPlayer(0, sNom1, iAge1);
 		
-		//
+		//Définir le strategy du jeu 
 		stategy stategy = new EasyStategy();
-		
-		String sName2 = "John";
+		//Créer deux autres Joueurs Virtuels qui s'appellent VP1 et VP2 
+		//Ses âge sont choisies aléatoire entre 1 et 50 
+		String sName2 = "VP1";
 		int iAge2 = (int) (Math.random()*50 +1);
 		VirtualPlayer player2 = new VirtualPlayer(1, sName2, iAge2,stategy);
 		
-		String sName3 = "David";
+		String sName3 = "VP2";
 		int iAge3 = (int) (Math.random()*50 +1);
 		VirtualPlayer player3 = new VirtualPlayer(2, sName3, iAge3,stategy);
 		
 		Match match = new Match(player1, player2, player3);
 		
 		System.out.println("the players are ready :" + match.getsPlayers() );
-		
+		//Finir la création des joueurs
 		
 		//Game in graphic
 		
