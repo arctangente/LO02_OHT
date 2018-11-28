@@ -3,10 +3,10 @@ package Card;
 import java.util.ArrayList;
 
 public class Trick {
-	// Attributes Principales 
+	// Attributs Principaux
 	private int idTrick;
 	private String[] arrIdProps;//La liste de composants pour faire le trick 
-	private int iPointTrick;//Le point gagnant si trick réussi 
+	private int iPointTrick;//Le point gagnant si trick reussi
 	private String sIdTrick;//Le 's' est pour le type 'String'
 	private String sNameTrick;
 	private Boolean isFaceUp;

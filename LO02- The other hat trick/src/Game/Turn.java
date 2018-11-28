@@ -63,7 +63,7 @@ public class Turn {
 	public void setPlayerChosen(Player player) {
 		this.playerChosen = player;
 	}
-	//Methode pour definir si l'on complète un Turn ou le jeu est terminé  
+	//Methode pour definir si l'on complete un Turn ou le jeu est termine
 	public void lastRound(Boolean bResultTurn) {
 		if(bResultTurn) {
 			this.match.setIsEnd(true);

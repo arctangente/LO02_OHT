@@ -3,9 +3,9 @@ package Card;
 import Player.*;
 
 public class Prop {
-	//Attributes principales 
+	//Attributs principaux
 	private int idProp;
-	private String sIdProp;//la lettre 's' représente le type 'String' du variable 
+	private String sIdProp;//la lettre 's' represente le type 'String' de la variable
 	private String sNameProp;
 	private Player pProperty;//'p' pour type 'Player'
 	private Boolean isFaceUp;
@@ -23,11 +23,11 @@ public class Prop {
 	public String getsPathFond() {
 		return sPathFond;
 	}
-	//Methode pour savoir si le Prop est retourné ou pas
+	//Methode pour savoir si le Prop est retourne ou pas
 	public Boolean getIsFaceUp() {
 		return this.isFaceUp;
 	}
-	//Methode pour définir la visibilité d'un Prop 
+	//Methode pour definir la visibilite d'un Prop
 	public void setIsFaceUp(Boolean isFaceUp) {
 		this.isFaceUp = isFaceUp;
 	}
@@ -35,7 +35,7 @@ public class Prop {
 	public String getsIdProp() {
 		return sIdProp;
 	}
-	//Methode pour définir l'ID du Prop en String
+	//Methode pour definir l'ID du Prop en String
 	
 	public void setsIdProp(String sIdProp) {
 		this.sIdProp = sIdProp;
