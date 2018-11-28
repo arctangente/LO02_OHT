@@ -4,14 +4,7 @@ import java.util.Scanner;
 
 import Game.Match;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Random;
-
 import Player.*;
-import Game.*;
-import View.BeginWindow;
-import View.*;
 
 public class ManageGame {
 	
@@ -21,19 +14,19 @@ public class ManageGame {
 		
 		
 		//Game in console
-		//Saisir des données du joueur
+		//Saisir des donnï¿½es du joueur
 		System.out.println("Veuillez saisir votre nom :");
 		String sNom1 = sc.nextLine();
 		System.out.println("Veuillez saisir votre age" );
 		String sAge1 = sc.nextLine();
 		int iAge1 = Integer.parseInt(sAge1);
-		//Creer l'objet "Joueur Réeel"
+		//Creer l'objet "Joueur Rï¿½eel"
 		PhysicalPlayer player1 = new PhysicalPlayer(0, sNom1, iAge1);
 		
-		//Définir le strategy du jeu 
+		//Dï¿½finir le strategy du jeu 
 		stategy stategy = new EasyStategy();
-		//Créer deux autres Joueurs Virtuels qui s'appellent VP1 et VP2 
-		//Ses âge sont choisies aléatoire entre 1 et 50 
+		//Crï¿½er deux autres Joueurs Virtuels qui s'appellent VP1 et VP2 
+		//Ses ï¿½ge sont choisies alï¿½atoire entre 1 et 50 
 		String sName2 = "VP1";
 		int iAge2 = (int) (Math.random()*50 +1);
 		VirtualPlayer player2 = new VirtualPlayer(1, sName2, iAge2,stategy);
@@ -44,8 +37,8 @@ public class ManageGame {
 		
 		Match match = new Match(player1, player2, player3);
 		
-		System.out.println("the players are ready :" + match.getsPlayers() );
-		//Finir la création des joueurs
+		System.out.println("the players are ready :" + match.getPlayer() );
+		//Finir la crï¿½ation des joueurs
 		
 		//Game in graphic
 		

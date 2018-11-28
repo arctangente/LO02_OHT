@@ -23,39 +23,41 @@ public class Prop {
 	public String getsPathFond() {
 		return sPathFond;
 	}
-	//Methode pour savoir si le Prop est retourne ou pas
+
+	//get et set Prop est retourne ou pas
 	public Boolean getIsFaceUp() {
 		return this.isFaceUp;
 	}
-	//Methode pour definir la visibilite d'un Prop
 	public void setIsFaceUp(Boolean isFaceUp) {
 		this.isFaceUp = isFaceUp;
 	}
-	//Methode pour avoir l'ID du Prop en String 
+
+	//get et set pour avoir l'ID du Prop en String
 	public String getsIdProp() {
 		return sIdProp;
 	}
-	//Methode pour definir l'ID du Prop en String
-	
 	public void setsIdProp(String sIdProp) {
 		this.sIdProp = sIdProp;
 	}
-	//Methode pour avoir le nom du Prop 
+
+
+	//get et set pour le nom du Prop
 	public String getsNameProp() {
 		return this.sNameProp;
 	}
-	//Methode pour definir le nom du Prop 
 	public void setsNameProp(String sNameProp) {
 		this.sNameProp = sNameProp;
 	}
-	//Methode pour avoir le joueur qui tiens le Prop 
+
+	//Methode pour avoir le joueur qui tiens le Prop
 	public Player getpProperty() {
 		return this.pProperty;
 	}
 	public void setpProperty(Player property) {
 		this.pProperty = property;
 	}
-	//Methode pour avoir l'ID du Prop en entier 
+
+	//Methode pour avoir l'ID du Prop en entier
 	public int getIdProp() {
 		return idProp;
 	}

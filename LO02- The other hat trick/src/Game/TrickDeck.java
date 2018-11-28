@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 import Card.Trick;
 
-public class TrickDesk extends ArrayList<Trick> { //TrickDeck est une liste de Trick
+public class TrickDeck extends ArrayList<Trick> { //TrickDeck est une liste de Trick
 	
 	private Match match;
 	//Methode pour creer le TrickDeck au debut d'un Match
-	public TrickDesk (Match matchActuel, ArrayList<Trick> tricks) {		
+	public TrickDeck(Match matchActuel, ArrayList<Trick> tricks) {
 		super();
 		this.match = matchActuel;
 		this.addAll(tricks);

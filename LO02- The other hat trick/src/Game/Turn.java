@@ -24,25 +24,24 @@ public class Turn {
 		this.iCounterLastRound =0;
 		this.startTurn();
 		}
-	//
+
+
 	public void startTurn() {
 		this.player.play(this);
-		
-		
 	}
+
+	//??
 	public ArrayList<Prop> getArrPairOfProp() {
 		return this.arrPairOfProp;
 	}
-
 	public void setArrPairOfProp(ArrayList<Prop> arrPairOfProp) {
 		this.arrPairOfProp = arrPairOfProp;
 	}
-	
+
+	//??
 	public Trick getTrickOnPerform() {
 		return this.trickOnPerform;
 	}
-
-
 	public void setTrickOnPerform(Trick trickOnPerform) {
 		this.trickOnPerform = trickOnPerform;
 	}
@@ -52,17 +51,21 @@ public class Turn {
 		return this.match;
 	}
 
-
 	public Player getPlayer() {
 		return this.player;
 	}
 
+
+	//get set le player choisi
 	public Player getPlayerChosen() {
 		return this.playerChosen;
 	}
 	public void setPlayerChosen(Player player) {
 		this.playerChosen = player;
 	}
+
+
+
 	//Methode pour definir si l'on complete un Turn ou le jeu est termine
 	public void lastRound(Boolean bResultTurn) {
 		if(bResultTurn) {

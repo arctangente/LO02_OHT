@@ -15,10 +15,10 @@ import org.w3c.dom.NodeList;
 
 
 public class InstancieurXml {
-	
+
 	private DocumentBuilderFactory dbf ;
 	private DocumentBuilder builder;
-	private 	Document document;
+	private Document document;
 	private Element root;
 	private HashSet<Prop> setProps;
 	private HashSet<Trick> setTricks;

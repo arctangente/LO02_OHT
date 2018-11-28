@@ -15,7 +15,7 @@ public class CollectionProps extends ArrayList<Prop> {
 		this.match = matchActuel;
 		this.addAll(arrProps);
 	}
-	//Methode pour distribuer les Props aux joueurs au d�but du jeu 
+	//Methode pour distribuer les Props aux joueurs au debut du jeu
 	public void distributeProp (ArrayList<Player> arrPlayers) {
 		
 		while (this.match.getCollectionProps().size()>arrPlayers.size()) {

@@ -15,7 +15,7 @@ public class PhysicalPlayer extends Player{
 	}
 
 
-
+	//choisir si l'on perform ce trick ou celui d'apres
 	public void chooseTrick(Turn currentTurn) {
 		TrickPile trickPile = currentTurn.getMatch().getTrickPile();
 		System.out.println("Current Trick is :" + trickPile.get(trickPile.size()-1).getsNameTrick());
@@ -36,14 +36,15 @@ public class PhysicalPlayer extends Player{
 		
 	}
 
+	// choisir un prop a echanger, echanger avec un prop dans la main d'un autre joueur
 	public void prepareProps(Turn currentTurn) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please choice the prop: first(0) or second(1)? : ");
+		System.out.println("Please choose the prop: first(0) or second(1)? : ");
 		System.out.println(currentTurn.getPlayer().getsArrPropinHand());
 		int iIndexPropChosen = Integer.parseInt(sc.nextLine());
 		Prop pPropChosen = currentTurn.getPlayer().getArrPropinHand().get(iIndexPropChosen);
 		
-		System.out.println("Please choice the player you want to exchange the props : John(1) or David(2)?");
+		System.out.println("Please choose the player you want to exchange the props : John(1) or David(2)?");
 		String sReponse = sc.nextLine();
 		if(sReponse.equals("1")) {
 			Player p = (VirtualPlayer) currentTurn.getMatch().findPlayerById(1);
@@ -52,7 +53,7 @@ public class PhysicalPlayer extends Player{
 			Player p = (VirtualPlayer) currentTurn.getMatch().findPlayerById(2);
 			currentTurn.setPlayerChosen(p);
 		}
-		System.out.println("playerCHosen : " + currentTurn.getPlayerChosen().getNamePlayer());
+		System.out.println("Player Chosen : " + currentTurn.getPlayerChosen().getNamePlayer());
 		if(currentTurn.getPlayerChosen().getPropsFaceUp().size()>0) {
 			System.out.println("The two props of the player chosen are : 0 or 1");
 			Player p = currentTurn.getPlayerChosen();
@@ -99,10 +100,13 @@ public class PhysicalPlayer extends Player{
 		
 	}
 	*/
+
+
+	//methode pour flip un prop en cas de forfeit, verifie si la prop nest pas deja faceup
 	public void forfeitMatch(Turn currentTurn) {
 		System.out.println(" You : Forfeit");
 		if(this.getPropsFaceUp().size()==0) {
-			System.out.println("Please choice one of yours props to flip on : 0 or 1?");
+			System.out.println("Please choose one of yours props to flip on : 0 or 1?");
 			Scanner sc = new Scanner(System.in);
 			if(sc.nextLine().equals("0")) {
 				this.getArrPropinHand().get(0).setIsFaceUp(true);
@@ -121,7 +125,7 @@ public class PhysicalPlayer extends Player{
 	}
 
 
-	@Override
+	//choisir une prop parmis les 3 (milieu, 2 de la main)
 	public void sleightOfHand(Turn currentTurn) {
 		
 		Scanner sc = new Scanner(System.in);
@@ -148,7 +152,7 @@ public class PhysicalPlayer extends Player{
 	}
 
 
-	@Override
+	//methode pour jouer
 	public void play(Turn currentTurn) {
 		this.chooseTrick(currentTurn);
 		this.prepareProps(currentTurn);

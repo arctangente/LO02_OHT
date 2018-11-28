@@ -3,16 +3,14 @@ package Game;
 import java.util.*;
 
 import Card.InstancieurXml;
-import Control.Controller;
 import Card.*;
 import Player.*;
-import View.MainWindow;
 
 public class Match extends Observable implements Runnable {
 
 	private static Match match;
 	private ArrayList<Player> listPlayer;
-	private TrickDesk trickDesk;
+	private TrickDeck trickDesk;
 	private CollectionProps collectionProps;
 	private TrickPile trickPile;
 	private Boolean isEnd;
@@ -66,11 +64,11 @@ public class Match extends Observable implements Runnable {
 		return arrVirPl;
 	}
 
-	public TrickDesk getTrickDesk() {
+	public TrickDeck getTrickDesk() {
 		return trickDesk;
 	}
 
-	public void setTrickDesk(TrickDesk trickDesk) {
+	public void setTrickDesk(TrickDeck trickDesk) {
 		this.trickDesk = trickDesk;
 	}
 
@@ -86,7 +84,7 @@ public class Match extends Observable implements Runnable {
 		return collectionProps;
 	}
 
-	public String getsPlayers() {
+	public String getPlayer() {
 		String sPlayers ="";
 		for (int i=0; i<this.listPlayer.size();i++) {
 			sPlayers += this.listPlayer.get(i).getNamePlayer() + " " + this.listPlayer.get(i).getAgePlayer() +"\n";
@@ -124,7 +122,7 @@ public class Match extends Observable implements Runnable {
 		
 		this.collectionProps = new CollectionProps(this, arrProps);
 		this.trickPile = new TrickPile(this);
-		this.trickDesk = new TrickDesk(this,arrTricks);
+		this.trickDesk = new TrickDeck(this,arrTricks);
 		this.collectionProps.distributeProp(this.listPlayer);
 	//	System.out.println(" Tricks and Props have been created");
 	//	System.out.println(readCard.toString());

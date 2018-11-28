@@ -7,8 +7,7 @@ import Game.*;
 import View.MainWindow;
 
 public class Controller{
-	
-	
+
 	private Match match;
 	//Methode constructeur qui produit l'objet Match actuel
 	public Controller (Match currentMatch) {
