@@ -15,11 +15,11 @@ public class PhysicalPlayer extends Player{
 	}
 
 
-<<<<<<< Upstream, based on branch 'master' of https://github.com/arctangente/LO02_OHT.git
+//<<<<<<< Upstream, based on branch 'master' of https://github.com/arctangente/LO02_OHT.git
 	//choisir si l'on perform ce trick ou celui d'apres
-=======
+//=======
 	//Methode pour choisir un Trick 
->>>>>>> e89b5f6 Commentaire
+//>>>>>>> e89b5f6 Commentaire
 	public void chooseTrick(Turn currentTurn) {
 		TrickPile trickPile = currentTurn.getMatch().getTrickPile(); //Get le TrickPile actuel 
 		System.out.println("Current Trick is :" + trickPile.get(trickPile.size()-1).getsNameTrick());//Prendre le Trick on Top de TrickPile
