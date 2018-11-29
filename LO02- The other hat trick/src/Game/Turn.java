@@ -24,16 +24,29 @@ public class Turn {
 		this.iCounterLastRound =0;
 		this.startTurn();
 		}
+<<<<<<< Upstream, based on branch 'master' of https://github.com/arctangente/LO02_OHT.git
 
 
+=======
+	//Methode pour commencer un nouveau tour 
+>>>>>>> e89b5f6 Commentaire
 	public void startTurn() {
 		this.player.play(this);
 	}
+<<<<<<< Upstream, based on branch 'master' of https://github.com/arctangente/LO02_OHT.git
 
 	//??
+=======
+	
+	//
+>>>>>>> e89b5f6 Commentaire
 	public ArrayList<Prop> getArrPairOfProp() {
 		return this.arrPairOfProp;
 	}
+<<<<<<< Upstream, based on branch 'master' of https://github.com/arctangente/LO02_OHT.git
+=======
+	
+>>>>>>> e89b5f6 Commentaire
 	public void setArrPairOfProp(ArrayList<Prop> arrPairOfProp) {
 		this.arrPairOfProp = arrPairOfProp;
 	}
