@@ -178,15 +178,25 @@ public  abstract class Player extends Observable {
 		Trick trickOnPerform = currentTurn.getTrickOnPerform();
 		if(iCounter ==2) {
 			this.successMatch(currentTurn);
-			if(trickOnPerform.getsIdTrick() == "otherRabit" ) {
+			if(trickOnPerform.getsIdTrick() == "otherHat" ) {
 				currentTurn.lastRound(true);
 			}
 		}
 		else {
 			this.forfeitMatch(currentTurn);
-			if(trickOnPerform.getsIdTrick() == "otherRabit" ){
-				currentTurn.lastRound(false);
-			    }
+			if(trickOnPerform.getsIdTrick() == "otherHat" ) {
+			for(int i=0;i<3;i++){
+				String sIdotherHatTrick = currentTurn.getMatch().getListPlayer().get(i).getsArrPropinHand();
+				if(Arrays.asList(sIdotherHatTrick).contains("The hat")) {
+					this.currentMatch.getListPlayer().get(i).addPointPlayer(-3); 
+				}
+				if(Arrays.asList(sIdotherHatTrick).contains("The other Rabbit")){
+					this.currentMatch.getListPlayer().get(i).addPointPlayer(-3); 
+				}
+				currentTurn.lastRound(true);
+				}
+			}
+			    
 		}
 		
 		
@@ -196,7 +206,7 @@ public  abstract class Player extends Observable {
 	//si le trick est un succes appeller cette fonction
 
 	//Quand le joueur a réussi de faire un Trick 
-//>>>>>>> e89b5f6 Commentaire
+
 	public void successMatch(Turn currentTurn) {
 		System.out.println("Success");
 		this.addPointPlayer(currentTurn.getTrickOnPerform().getiPointTrick());

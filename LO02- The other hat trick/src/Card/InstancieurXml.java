@@ -46,16 +46,16 @@ public class InstancieurXml {
 		setTricks = new HashSet<Trick>();
 		NodeList list = this.root.getChildNodes();
 		// NodeList n'as pas d'iterateur donc on y va a l'ancienne...
-		int counter = 0;
-		//
+		int counterProp = 0;
+		int counterTrick = 0;
 		for (int i = 0; i < list.getLength(); i++) {
 			if(list.item(i).getNodeName().equals("prop")) {
 				Element elementList = (Element) list.item(i);
 				String sIdProp = elementList.getAttribute("template");
 				String sNameProp = elementList.getTextContent();
 				String sPathFond = elementList.getAttribute("pathImage");
-				setProps.add(new Prop(i,sIdProp , sNameProp,sPathFond));
-				
+				setProps.add(new Prop(counterProp+1,sIdProp , sNameProp,sPathFond));
+				counterProp++;
 			}
 			else if(list.item(i).getNodeName().equals("trick")) {
 				Element elementList = (Element) list.item(i);
@@ -65,7 +65,8 @@ public class InstancieurXml {
 				String sPointTrick = elementList.getAttribute("point");
 				int iPointTrick = Integer.parseInt(sPointTrick);
 				String sPathFond = elementList.getAttribute("pathImage");
-				setTricks.add(new Trick(i, sIdTrick, sNameTrick, arrSidProps, iPointTrick,sPathFond));
+				setTricks.add(new Trick(counterTrick, sIdTrick, sNameTrick, arrSidProps, iPointTrick,sPathFond));
+				counterTrick++;
 			}
 		}
 		
@@ -73,7 +74,9 @@ public class InstancieurXml {
 		Collections.shuffle(this.arrProps);
 		this.arrTricks = new ArrayList<Trick>(this.setTricks);
 		Collections.shuffle(this.arrTricks);
-		
+		String[] arrSidProps1 = {"hat","otherRabbit"};
+		Trick TheotherhatTrick = new Trick(counterTrick,"otherHat","The other Hat Trick",arrSidProps1,6,"image/OtherHat.png");
+		this.arrTricks.add(this.arrTricks.size(),TheotherhatTrick);
 	}
 	
 	public ArrayList<Prop> getListProps() {

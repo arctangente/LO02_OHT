@@ -71,7 +71,7 @@ public class EasyStategy implements stategy{
 		}else if(player.getPropsFaceUp().size()==1) {
 			player.getArrPropinHand().get(0).setIsFaceUp(true);
 			player.getArrPropinHand().get(1).setIsFaceUp(true);
-			System.out.println(player.getNamePlayer() +" All of props  are face-up");
+			System.out.println(player.getNamePlayer() +" All of props  are face-up:"+player.getArrPropinHand().get(0).getsNameProp()+" ,"+player.getArrPropinHand().get(1).getsNameProp());
 		}else {
 			System.out.println("There's no penalty for " + player.getNamePlayer());
 		}

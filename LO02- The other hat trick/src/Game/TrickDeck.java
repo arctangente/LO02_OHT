@@ -16,9 +16,11 @@ public class TrickDeck extends ArrayList<Trick> { //TrickDeck est une liste de T
 	}
 	//Methode pour retourner la carte en top de TrickDeck et puis l'envoyer vers Trick Pile
 	public void flipTrick() {
+		
 		Trick trickTop = this.get(0);
 		trickTop.setIsFaceUp(true);
 		this.match.getTrickPile().add(trickTop);
 		this.remove(trickTop);
+		
 	}
 }

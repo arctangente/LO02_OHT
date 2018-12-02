@@ -1,6 +1,5 @@
 package Player;
 
-import java.util.Scanner;
 
 import Game.*;
 

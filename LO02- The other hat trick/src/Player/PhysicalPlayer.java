@@ -15,40 +15,48 @@ public class PhysicalPlayer extends Player{
 	}
 
 
-//<<<<<<< Upstream, based on branch 'master' of https://github.com/arctangente/LO02_OHT.git
+
 	//choisir si l'on perform ce trick ou celui d'apres
-//=======
+
 	//Methode pour choisir un Trick 
-//>>>>>>> e89b5f6 Commentaire
+
 	public void chooseTrick(Turn currentTurn) {
 		TrickPile trickPile = currentTurn.getMatch().getTrickPile(); //Get le TrickPile actuel 
+		TrickDeck trickDesk = currentTurn.getMatch().getTrickDesk();// Get le TrickDesk actuel 
 		System.out.println("Current Trick is :" + trickPile.get(trickPile.size()-1).getsNameTrick());//Prendre le Trick on Top de TrickPile
-		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please choice the trick : this(0) or next(1)?");
-		String sReponse = sc.nextLine();
 		Trick trickOnPerform;
-		if(sReponse.equals("0")) {
-			trickOnPerform = trickPile.get(trickPile.size()-1);
-		}else {
-			currentTurn.getMatch().getTrickDesk().flipTrick();
-			trickOnPerform = trickPile.get(trickPile.size()-1);
-		}
-		currentTurn.setTrickOnPerform(trickOnPerform);
+		if (trickDesk.size()!=0){ 
+			System.out.println("Please choice the trick : this(0) or next(1)?");
+			String sReponse = sc.nextLine();
 		
-		System.out.println("You have choose Trick to perform : " + trickOnPerform.getsNameTrick());
+			if(sReponse.equals("0")) {
+				trickOnPerform = trickPile.get(trickPile.size()-1);
+			}else {
+				currentTurn.getMatch().getTrickDesk().flipTrick();
+				trickOnPerform = trickPile.get(trickPile.size()-1);
+			}
+			currentTurn.setTrickOnPerform(trickOnPerform);
+			
+			System.out.println("You have choose Trick to perform : " + trickOnPerform.getsNameTrick());
+			}
+		else {
+			trickOnPerform = trickPile.get(trickPile.size()-1);
+			System.out.println("Trick to perform : " + trickOnPerform.getsNameTrick());
+			//currentTurn.getMatch().setIsEnd(true);
+		}
 		
 	}
 
 	// choisir un prop a echanger, echanger avec un prop dans la main d'un autre joueur
 	public void prepareProps(Turn currentTurn) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please choose the prop: first(0) or second(1)? : ");
+		System.out.println("Please choose the prop to exchange0: first(0) or second(1)? : ");
 		System.out.println(currentTurn.getPlayer().getsArrPropinHand());
 		int iIndexPropChosen = Integer.parseInt(sc.nextLine());
 		Prop pPropChosen = currentTurn.getPlayer().getArrPropinHand().get(iIndexPropChosen);
 		
-		System.out.println("Please choose the player you want to exchange the props : John(1) or David(2)?");
+		System.out.println("Please choose the player you want to exchange the props : VP1(1) or VP2(2)?");
 		String sReponse = sc.nextLine();
 		if(sReponse.equals("1")) {
 			Player p = (VirtualPlayer) currentTurn.getMatch().findPlayerById(1);

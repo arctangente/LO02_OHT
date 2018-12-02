@@ -138,9 +138,10 @@ public class Match extends Observable implements Runnable {
 			iIndexPlayer++;
 			if(iIndexPlayer==3) iIndexPlayer =0;
 		}
-		for (int i=0; i<this.listPlayer.size();i++) {
-			
-			
+		if (this.isEnd) {
+			for (int j=0; j<this.listPlayer.size();j++) {
+				System.out.println(this.listPlayer.get(j).showParameter());
+			}
 		}
 		
 	}
@@ -151,6 +152,10 @@ public class Match extends Observable implements Runnable {
 
 	public void setIsEnd(Boolean isEnd) {
 		this.isEnd = isEnd;
+	}
+	
+	public void EndMatch(){
+		
 	}
 	
 	public static Match getSingleton(PhysicalPlayer player1, VirtualPlayer player2, VirtualPlayer player3) {

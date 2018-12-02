@@ -20,7 +20,7 @@ public class ManageGame {
 		System.out.println("Veuillez saisir votre age" );
 		String sAge1 = sc.nextLine();
 		int iAge1 = Integer.parseInt(sAge1);
-		//Creer l'objet "Joueur R�eel"
+		//Creer l'objet "Joueur Reel"
 		PhysicalPlayer player1 = new PhysicalPlayer(0, sNom1, iAge1);
 		
 		//D�finir le strategy du jeu 
