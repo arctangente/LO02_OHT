@@ -20,6 +20,6 @@
 		<trick template="carrotHat" props ="hat,carrots" point="3" pathImage ="image/CarrotsHat.png" back="verso">The carrot Hat Trick</trick>
 		<trick template="slightlyHat" props ="hat,rabbit,otherrabbit" pathImage ="image/SlightEasy.png" point="4"  back="verso">The Slightly Easier Hat Trick	</trick>
 		<trick template="HatTrick" props ="hat,rabbit" point="5" pathImage ="image/HatTrick.png" back="verso">The carrot Hat Trick</trick>
-		<trick template="otherHat" props ="hat,otherRabbit" point="6" pointPenal = "3" pathImage ="image/OtherHat.png" back="verso">The other Hat Trick</trick>
+
 	</deck>
 	

@@ -46,7 +46,7 @@ public class EasyStategy implements stategy{
 		int iIdPlayerChosen  =0 ;
 		while ((iIdPlayerChosen == 0)|(iIdPlayerChosen == player.getIdPlayer()) ) {
 			iIdPlayerChosen = rd.nextInt(3);
-			System.out.println(iIdPlayerChosen);
+			//System.out.println(iIdPlayerChosen);
 			
 		} 
 		Player p = currentTurn.getMatch().findPlayerById(iIdPlayerChosen);
