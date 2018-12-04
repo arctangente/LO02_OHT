@@ -136,13 +136,7 @@ public class Match extends Observable implements Runnable {
 		while(!this.isEnd) {
 			Turn t = new Turn(this, this.listPlayer.get(iIndexPlayer));
 			iIndexPlayer++;
-			if(iIndexPlayer==3){
-				iIndexPlayer =0;
-				for (int k=0; k<this.listPlayer.size();k++) {
-					System.out.println(this.listPlayer.get(k).showParameter());
-				}
-			}
-			
+			if(iIndexPlayer==3) iIndexPlayer =0;
 		}
 		if (this.isEnd) {
 			for (int j=0; j<this.listPlayer.size();j++) {

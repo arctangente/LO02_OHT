@@ -6,20 +6,20 @@
 		<prop template="carrots" back="verso" pathImage ="image/Carrots.png">The carrots</prop>
 		<prop template="carrots" back="verso" pathImage ="image/Carrots.png">The carrots</prop>
 		<prop template="hat" back="verso" pathImage ="image/Hat.png">The hat</prop>
-		<prop template="rabbit" back="verso" pathImage ="image/Rabbit.png">The rabbit</prop>
-		<prop template="otherrabbit" back="verso" pathImage ="image/OtherRabbit.png">The other rabbit</prop>
+		<prop template="rabbit" back="verso" pathImage ="image/Rabbit.png">The rabbit	</prop>
+		<prop template="otherRabit" back="verso" pathImage ="image/OtherRabbit.png">The other rabbit</prop>
 		<!-- Tricks -->
-		<trick template="hungryrabbit" props1 ="rabbit,otherrabbit" props2 ="carrots,lettuce" point="1" back="verso">
-The Hungry Rabbit
+		<trick template="hungryRabbit" props ="rabbit,otherRabbit,carrots,lettuce" point="1" back="verso">
+			The hungry Rabbit
 		</trick>
-		<trick template="bunchcarrots" props1 ="carrots" props2 ="carrots" pathImage ="image/PairCarrots.png" point="2" back="verso">The Bunch of Carrots	</trick>
-		<trick template="vegetablepatch" props1 ="carrots" props2 ="lettuce" point="3" pathImage ="image/Vegetable.png" back="verso">The Vegetable Patch</trick>
-		<trick template="rabbit0carrots" props1 ="rabbit,otherrabbit" props2="lettuce" pathImage ="image/RabbitNotCarrots.png" point="4" back="verso">The Rabbit That Didn't Like Carrots</trick>
-		<trick template="pairRabbit" props1 ="rabbit" props2="otherrabbit" point="5" pathImage ="image/PairRabbits.png" back="verso">The Pair of Rabbits</trick>
-		<trick template="vegetableHat" props1 ="hat" props2 ="carrots,lettuce"  point="2" pathImage ="image/VegetableHat.png" back="verso">The Vegetable Hat Trick</trick>
-		<trick template="carrotHat" props1 ="hat" props2 ="carrots" point="3" pathImage ="image/CarrotsHat.png" back="verso">The Carrot Hat Trick</trick>
-		<trick template="slightlyHat" props1 ="hat" props2 ="rabbit,otherrabbit" pathImage ="image/SlightEasy.png" point="4"  back="verso">The Slightly Easier Hat Trick	</trick>
-		<trick template="HatTrick" props1 ="hat" props2 ="rabbit" point="5" pathImage ="image/HatTrick.png" back="verso">The Carrot Hat Trick</trick>
+		<trick template="bunchCarrots" props ="carrots,carrots" pathImage ="image/PairCarrots.png" point="2" back="verso">The bunch of Carrots	</trick>
+		<trick template="vegetablePatch" props ="carrots,lettuce" point="3" pathImage ="image/Vegetable.png" back="verso">The Vegetable Patch</trick>
+		<trick template="rabbit0carrots" props ="rabbit,otherRabbit,lettuce" pathImage ="image/RabbitNotCarrots.png" point="4" back="verso">The Rabbit didn't like carrots</trick>
+		<trick template="pairRabbit" props ="rabbit,otherRabbit" point="5" pathImage ="image/PairRabbits.png" back="verso">The pair of Rabbits</trick>
+		<trick template="vegetableHat" props ="hat,carrots,lettuce"  point="2" pathImage ="image/VegetableHat.png" back="verso">The vegetable Hat Trick</trick>
+		<trick template="carrotHat" props ="hat,carrots" point="3" pathImage ="image/CarrotsHat.png" back="verso">The carrot Hat Trick</trick>
+		<trick template="slightlyHat" props ="hat,rabbit,otherrabbit" pathImage ="image/SlightEasy.png" point="4"  back="verso">The Slightly Easier Hat Trick	</trick>
+		<trick template="HatTrick" props ="hat,rabbit" point="5" pathImage ="image/HatTrick.png" back="verso">The carrot Hat Trick</trick>
 
 	</deck>
 	

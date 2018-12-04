@@ -61,12 +61,11 @@ public class InstancieurXml {
 				Element elementList = (Element) list.item(i);
 				String sIdTrick = elementList.getAttribute("template");
 				String sNameTrick = elementList.getTextContent();
-				String[] arrSidProps1 = elementList.getAttribute("props1").split(",");
-				String[] arrSidProps2 = elementList.getAttribute("props2").split(",");
+				String[] arrSidProps = elementList.getAttribute("props").split(",");
 				String sPointTrick = elementList.getAttribute("point");
 				int iPointTrick = Integer.parseInt(sPointTrick);
 				String sPathFond = elementList.getAttribute("pathImage");
-				setTricks.add(new Trick(counterTrick, sIdTrick, sNameTrick, arrSidProps1, arrSidProps2, iPointTrick,sPathFond));
+				setTricks.add(new Trick(counterTrick, sIdTrick, sNameTrick, arrSidProps, iPointTrick,sPathFond));
 				counterTrick++;
 			}
 		}
@@ -75,9 +74,8 @@ public class InstancieurXml {
 		Collections.shuffle(this.arrProps);
 		this.arrTricks = new ArrayList<Trick>(this.setTricks);
 		Collections.shuffle(this.arrTricks);
-		String[] arrSidProps1 = {"hat"};
-		String[] arrSidProps2 = {"otherRabbit"};
-		Trick TheotherhatTrick = new Trick(counterTrick,"otherHat","The other Hat Trick",arrSidProps1,arrSidProps2,6,"image/OtherHat.png");
+		String[] arrSidProps1 = {"hat","otherRabbit"};
+		Trick TheotherhatTrick = new Trick(counterTrick,"otherHat","The other Hat Trick",arrSidProps1,6,"image/OtherHat.png");
 		this.arrTricks.add(this.arrTricks.size(),TheotherhatTrick);
 	}
 	

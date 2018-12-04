@@ -144,8 +144,8 @@ public class PhysicalPlayer extends Player{
 		this.setPropsFace(false);
 		System.out.println(currentTurn.getMatch().getCollectionProps().size());
 		System.out.println("The 7th prop is : " + currentTurn.getMatch().getCollectionProps().get(0).getsNameProp());
-		
-		
+		System.out.println("Do you want to change yours props with the 7th? No (0) or Yes(1)");
+		if(sc.nextLine().equals("1")) {
 			System.out.println("You want to change the first(0)or the second(1)? : " + currentTurn.getPlayer().getsArrPropinHand());
 			int iIndexProp = Integer.parseInt(sc.nextLine());
 				Prop p7thProp = currentTurn.getMatch().getCollectionProps().get(0);
@@ -157,7 +157,7 @@ public class PhysicalPlayer extends Player{
 				this.getArrPropinHand().remove(iIndexProp);
 				this.addArrPropinHand(p7thProp);
 							
-
+		}
 		System.out.println("The props in yours now are : " + this.getsArrPropinHand());
 		System.out.println("The sleight of hand is finished.");
 	

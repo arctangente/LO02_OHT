@@ -19,13 +19,12 @@ public class EasyStategy implements stategy{
 	}
 	public void chooseTrick(VirtualPlayer player, Turn currentTurn) {
 		TrickPile trickPile  = currentTurn.getMatch().getTrickPile();
-		Trick trickOnPerform = trickPile.get(trickPile.size()-1);//A Changer s'il n'y a pas de Trick dans TrickPile 
-		String[] listPropInTrick1 = trickOnPerform.getArrIdProps1();
-		String[] listPropInTrick2 = trickOnPerform.getArrIdProps2();
+		Trick trickOnPerform = trickPile.get(trickPile.size()-1);
+		String[] listPropInTrick = trickOnPerform.getArrIdProps();
 		int indexMatched =0;
 		for(int i=0;i<2;i++) {
 			Prop pr = player.getArrPropinHand().get(i);
-			if(Arrays.asList(listPropInTrick1).contains(pr.getsIdProp()) && (Arrays.asList(listPropInTrick2).contains(pr.getsIdProp()))) {
+			if(Arrays.asList(listPropInTrick).contains(pr.getsIdProp())) {
 				indexMatched ++;
 			}
 		}
