@@ -53,6 +53,7 @@ public class EasyStategy implements stategy{
 		currentTurn.setPlayerChosen(p);
 		int iIndexAnotherProp =  rd.nextInt(1);
 		 Prop pAnotherPropChosen = currentTurn.getPlayerChosen().getArrPropinHand().get(iIndexAnotherProp);
+		 
 		 currentTurn.getPlayer().setArrPropinHand(iIndexPropChosen, pAnotherPropChosen);
 		 currentTurn.getPlayerChosen().setArrPropinHand(iIndexAnotherProp, pPropChosen);
 		 currentTurn.setArrPairOfProp(currentTurn.getPlayer().getArrPropinHand());

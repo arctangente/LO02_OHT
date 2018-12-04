@@ -13,7 +13,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-//Ce class a pour but de generer les cartes par un fichier Cards.xml
+//Ce class a pour but de générer les cartes par un fichier Cards.xml
 public class InstancieurXml {
 
 	private DocumentBuilderFactory dbf ;
@@ -45,7 +45,7 @@ public class InstancieurXml {
 		setProps = new HashSet<Prop>();
 		setTricks = new HashSet<Trick>();
 		NodeList list = this.root.getChildNodes();
-		// NodeList n'as pas d'iterateur donc on y va aï¿½l'ancienne...
+		// NodeList n'as pas d'iterateur donc on y va a l'ancienne...
 		int counterProp = 0;
 		int counterTrick = 0;
 		for (int i = 0; i < list.getLength(); i++) {
