@@ -35,7 +35,7 @@ public class EasyStategy implements stategy{
 		}
 		
 		currentTurn.setTrickOnPerform(trickOnPerform);	
-		System.out.println( player.getNamePlayer() + " have choose Trick to perform : " + trickOnPerform.getsNameTrick());
+		System.out.println( player.getNamePlayer() + " chose this trick to perform : " + trickOnPerform.getsNameTrick());
 		
 	}
 	public void prepareProp(VirtualPlayer player, Turn currentTurn) {
@@ -59,6 +59,7 @@ public class EasyStategy implements stategy{
 		 currentTurn.getPlayerChosen().setArrPropinHand(iIndexAnotherProp, pPropChosen);
 		 currentTurn.setArrPairOfProp(currentTurn.getPlayer().getArrPropinHand());
 		System.out.println(player.getNamePlayer() + " has exchanged the props of " + p.getNamePlayer());
+		System.out.println();
 	}
 
 	public void forfeit(VirtualPlayer player, Turn currentTurn) {
@@ -76,6 +77,7 @@ public class EasyStategy implements stategy{
 		}else {
 			System.out.println("There's no penalty for " + player.getNamePlayer());
 		}
+		System.out.println();
 	}
 	@Override
 	public void sleightOfHand(VirtualPlayer player, Turn currentTurn) {
@@ -96,6 +98,7 @@ public class EasyStategy implements stategy{
 		}
 		System.out.println("The props of " + player.getNamePlayer() +" are face down" );
 		System.out.println("The sleight of hand is finished.");
+		System.out.println();
 		
 	};
 

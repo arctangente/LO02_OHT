@@ -29,7 +29,7 @@ public class VirtualPlayer extends Player{
 
 
 	public void forfeitMatch(Turn currentTurn) {
-		System.out.println(this.getNamePlayer() +" Forfeit");
+		System.out.println("///////////////////"+this.getNamePlayer() +" Forfeit"+"///////////////////");
 		
 		this.stategy.forfeit(this,currentTurn);
 		

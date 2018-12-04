@@ -35,7 +35,6 @@ public class Match extends Observable implements Runnable {
 			
 			
 		});
-		System.out.println("match begin");
 		this.start();
 	//	MainWindow viewGraphic = new MainWindow(this, player1, new Controller(this));
 		
@@ -130,8 +129,9 @@ public class Match extends Observable implements Runnable {
 		for (int i=0; i<this.listPlayer.size();i++) {
 			System.out.println(this.listPlayer.get(i).showParameter());
 		}
+		System.out.println("####################START######################");
 		System.out.println("Trick on Trickpile : "+ this.trickPile.get(this.trickPile.size()-1).getsNameTrick());
-		
+		System.out.println();
 		int iIndexPlayer =0;
 		while(!this.isEnd) {
 			Turn t = new Turn(this, this.listPlayer.get(iIndexPlayer));
@@ -141,10 +141,12 @@ public class Match extends Observable implements Runnable {
 				for (int k=0; k<this.listPlayer.size();k++) {
 					System.out.println(this.listPlayer.get(k).showParameter());
 				}
+				System.out.println("************************************");
 			}
 			
 		}
 		if (this.isEnd) {
+			System.out.println("###################END#################");
 			for (int j=0; j<this.listPlayer.size();j++) {
 				System.out.println(this.listPlayer.get(j).showParameter());
 			}

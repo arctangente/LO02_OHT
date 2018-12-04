@@ -177,18 +177,20 @@ public  abstract class Player extends Observable {
 	public  void performProps(Turn currentTurn)  {
 		int iCounter = 0;
 		//for (int i=0;i<2;i++) {
+			
 			String[] listPropInTrick1 = currentTurn.getTrickOnPerform().getArrIdProps1();
-			System.out.println(listPropInTrick1[0]);
 			String[] listPropInTrick2 = currentTurn.getTrickOnPerform().getArrIdProps2();
-			System.out.println(listPropInTrick2[0]);
+			
 			String sIdProp1 = currentTurn.getArrPairOfProp().get(0).getsIdProp();
-			System.out.println(sIdProp1);
+			//System.out.println(sIdProp1);
 			String sIdProp2 = currentTurn.getArrPairOfProp().get(1).getsIdProp();
-			System.out.println(sIdProp2);
+			//System.out.println(sIdProp2);
+			//System.out.println(currentTurn.getPlayer().getsArrPropinHand());
+			System.out.println();
 			if((Arrays.asList(listPropInTrick1).contains(sIdProp1)
-					||Arrays.asList(listPropInTrick1).contains(sIdProp2))
-					&&(Arrays.asList(listPropInTrick2).contains(sIdProp2)
-							||Arrays.asList(listPropInTrick2).contains(sIdProp1))) {
+					&&Arrays.asList(listPropInTrick2).contains(sIdProp2))
+					||(Arrays.asList(listPropInTrick1).contains(sIdProp2)
+							&&Arrays.asList(listPropInTrick2).contains(sIdProp1))) {
 				iCounter ++;
 			}
 		//}
@@ -204,8 +206,8 @@ public  abstract class Player extends Observable {
 			if(trickOnPerform.getsIdTrick() == "otherHat" ) {
 			for(int i=0;i<3;i++){
 				String[] sArrProp = currentTurn.getMatch().getListPlayer().get(i).getArrsIdPropinHand();
-				System.out.println(sArrProp[0]);
-				System.out.println(sArrProp[1]);
+				//System.out.println(sArrProp[0]);
+				//System.out.println(sArrProp[1]);
 				if(Arrays.asList(sArrProp).contains("hat")) {
 					currentTurn.getMatch().getListPlayer().get(i).addPointPlayer(-3); 
 				}
@@ -227,7 +229,7 @@ public  abstract class Player extends Observable {
 	//Quand le joueur a réussi de faire un Trick 
 
 	public void successMatch(Turn currentTurn) {
-		System.out.println("Success");
+		System.out.println("---------------Success----------------");
 		//this.addPointPlayer(-10);
 		this.addPointPlayer(currentTurn.getTrickOnPerform().getiPointTrick());
 		this.addArrTricksPerformed(currentTurn.getTrickOnPerform());

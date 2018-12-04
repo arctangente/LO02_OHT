@@ -27,7 +27,7 @@ public class PhysicalPlayer extends Player{
 		Scanner sc = new Scanner(System.in);
 		Trick trickOnPerform;
 		if (trickDesk.size()!=0){ 
-			System.out.println("Please choice the trick : this(0) or next(1)?");
+			System.out.println("Please choose the trick : this(0) or next(1)?");
 			String sReponse = sc.nextLine();
 		
 			if(sReponse.equals("0")) {
@@ -38,7 +38,7 @@ public class PhysicalPlayer extends Player{
 			}
 			currentTurn.setTrickOnPerform(trickOnPerform);
 			
-			System.out.println("You have choose Trick to perform : " + trickOnPerform.getsNameTrick());
+			System.out.println("You have chosen this trick to perform : " + trickOnPerform.getsNameTrick());
 			}
 		else {
 			trickOnPerform = trickPile.get(trickPile.size()-1);
@@ -51,7 +51,7 @@ public class PhysicalPlayer extends Player{
 	// choisir un prop a echanger, echanger avec un prop dans la main d'un autre joueur
 	public void prepareProps(Turn currentTurn) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please choose the prop to exchange0: first(0) or second(1)? : ");
+		System.out.println("Please choose the prop to exchange: the first(0) or the second(1)? : ");
 		System.out.println(currentTurn.getPlayer().getsArrPropinHand());
 		int iIndexPropChosen = Integer.parseInt(sc.nextLine());
 		Prop pPropChosen = currentTurn.getPlayer().getArrPropinHand().get(iIndexPropChosen);
@@ -70,7 +70,8 @@ public class PhysicalPlayer extends Player{
 			System.out.println("The two props of the player chosen are : 0 or 1");
 			Player p = currentTurn.getPlayerChosen();
 			for (int i =0; i<2;i++ ) {
-				if(p.getArrPropinHand().get(i).getIsFaceUp()) {
+					System.out.print(i+"-");
+				if(p.getArrPropinHand().get(i).getIsFaceUp()) {					
 					System.out.println(p.getArrPropinHand().get(i).getsNameProp());
 				}else {
 					
@@ -89,7 +90,7 @@ public class PhysicalPlayer extends Player{
 		 currentTurn.getPlayerChosen().setArrPropinHand(iIndexAnotherProp, pPropChosen);
 		 currentTurn.setArrPairOfProp(currentTurn.getPlayer().getArrPropinHand());
 		 System.out.println("Your current props are: ");
-		System.out.println(currentTurn.getPlayer().getsArrPropinHand());
+		 System.out.println(currentTurn.getPlayer().getsArrPropinHand());
 		 
 		 
 		 
@@ -116,7 +117,7 @@ public class PhysicalPlayer extends Player{
 
 	//methode pour flip un prop en cas de forfeit, verifie si la prop nest pas deja faceup
 	public void forfeitMatch(Turn currentTurn) {
-		System.out.println(" You : Forfeit");
+		System.out.println("/////////////Forfeit//////////////");
 		if(this.getPropsFaceUp().size()==0) {
 			System.out.println("Please choose one of yours props to flip on : 0 or 1?");
 			Scanner sc = new Scanner(System.in);
@@ -142,11 +143,11 @@ public class PhysicalPlayer extends Player{
 		
 		Scanner sc = new Scanner(System.in);
 		this.setPropsFace(false);
-		System.out.println(currentTurn.getMatch().getCollectionProps().size());
+		//System.out.println(currentTurn.getMatch().getCollectionProps().size());
 		System.out.println("The 7th prop is : " + currentTurn.getMatch().getCollectionProps().get(0).getsNameProp());
 		
 		
-			System.out.println("You want to change the first(0)or the second(1)? : " + currentTurn.getPlayer().getsArrPropinHand());
+			System.out.println("Do you want to change the first(0)or the second(1)? : " + currentTurn.getPlayer().getsArrPropinHand());
 			int iIndexProp = Integer.parseInt(sc.nextLine());
 				Prop p7thProp = currentTurn.getMatch().getCollectionProps().get(0);
 				Prop pPropChange = currentTurn.getPlayer().getArrPropinHand().get(iIndexProp);
