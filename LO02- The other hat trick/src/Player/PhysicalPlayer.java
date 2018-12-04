@@ -27,7 +27,7 @@ public class PhysicalPlayer extends Player{
 		Scanner sc = new Scanner(System.in);
 		Trick trickOnPerform;
 		if (trickDesk.size()!=0){ 
-			System.out.println("Please choice the trick : this(0) or next(1)?");
+			System.out.println("Please choose the trick : this(0) or next(1)?");
 			String sReponse = sc.nextLine();
 		
 			if(sReponse.equals("0")) {
@@ -38,7 +38,7 @@ public class PhysicalPlayer extends Player{
 			}
 			currentTurn.setTrickOnPerform(trickOnPerform);
 			
-			System.out.println("You have choose Trick to perform : " + trickOnPerform.getsNameTrick());
+			System.out.println("You have chosen Trick to perform : " + trickOnPerform.getsNameTrick());
 			}
 		else {
 			trickOnPerform = trickPile.get(trickPile.size()-1);
@@ -146,7 +146,7 @@ public class PhysicalPlayer extends Player{
 		System.out.println("The 7th prop is : " + currentTurn.getMatch().getCollectionProps().get(0).getsNameProp());
 		System.out.println("Do you want to change yours props with the 7th? No (0) or Yes(1)");
 		if(sc.nextLine().equals("1")) {
-			System.out.println("You want to change the first(0)or the second(1)? : " + currentTurn.getPlayer().getsArrPropinHand());
+			System.out.println("Do yYou want to change the first(0)or the second(1)? : " + currentTurn.getPlayer().getsArrPropinHand());
 			int iIndexProp = Integer.parseInt(sc.nextLine());
 				Prop p7thProp = currentTurn.getMatch().getCollectionProps().get(0);
 				Prop pPropChange = currentTurn.getPlayer().getArrPropinHand().get(iIndexProp);
@@ -158,7 +158,7 @@ public class PhysicalPlayer extends Player{
 				this.addArrPropinHand(p7thProp);
 							
 		}
-		System.out.println("The props in yours now are : " + this.getsArrPropinHand());
+		System.out.println("The props in your hands are : " + this.getsArrPropinHand());
 		System.out.println("The sleight of hand is finished.");
 	
 	}

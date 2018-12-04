@@ -72,7 +72,7 @@ public  abstract class Player extends Observable {
 		return sResult;
 	}
 
-	//get et add les Trick réalisés 
+	//get et add les Trick realises
 	public ArrayList<Trick> getArrTricksPerformed() {
 		return this.arrTricksPerformed;
 	}
@@ -101,7 +101,7 @@ public  abstract class Player extends Observable {
 
 
 
-	//get et set l'âge du Joueur 
+	//get et set l'age du Joueur
 
 	public int getAgePlayer() {
 		return this.agePlayer;
@@ -153,7 +153,7 @@ public  abstract class Player extends Observable {
 	}
 
 
-		//get les Props retounés 
+		//get les Props retournes
 		public ArrayList<Prop> getPropsFaceUp(){
 			ArrayList<Prop> arrResult=  new ArrayList<Prop>();
 			for(int i=0;i<this.arrPropinHand.size();i++) {
@@ -205,7 +205,7 @@ public  abstract class Player extends Observable {
 
 	//si le trick est un succes appeller cette fonction
 
-	//Quand le joueur a réussi de faire un Trick 
+	//Quand le joueur a reussi de faire un Trick
 
 	public void successMatch(Turn currentTurn) {
 		System.out.println("Success");
