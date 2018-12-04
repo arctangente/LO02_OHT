@@ -10,7 +10,7 @@ import Card.*;
 import Game.*;
 
 public  abstract class Player extends Observable {
-	
+
 
 	private String namePlayer;
 	private int idPlayer;
@@ -36,7 +36,7 @@ public  abstract class Player extends Observable {
 	}
 
 
-	//get et set Nameplayer 
+	//get et set Nameplayer
 
 	public String getNamePlayer() {
 		return this.namePlayer;
@@ -72,7 +72,7 @@ public  abstract class Player extends Observable {
 		return sResult;
 	}
 
-	//get et add les Trick réalisés 
+	//get et add les Trick rï¿½alises
 	public ArrayList<Trick> getArrTricksPerformed() {
 		return this.arrTricksPerformed;
 	}
@@ -101,7 +101,7 @@ public  abstract class Player extends Observable {
 
 
 
-	//get et set l'âge du Joueur 
+	//get et set l'ï¿½ge du Joueur 
 
 	public int getAgePlayer() {
 		return this.agePlayer;
@@ -153,7 +153,7 @@ public  abstract class Player extends Observable {
 	}
 
 
-		//get les Props retounés 
+		//get les Props retounï¿½s 
 		public ArrayList<Prop> getPropsFaceUp(){
 			ArrayList<Prop> arrResult=  new ArrayList<Prop>();
 			for(int i=0;i<this.arrPropinHand.size();i++) {
@@ -205,7 +205,7 @@ public  abstract class Player extends Observable {
 
 	//si le trick est un succes appeller cette fonction
 
-	//Quand le joueur a réussi de faire un Trick 
+	//Quand le joueur a rï¿½ussi de faire un Trick 
 
 	public void successMatch(Turn currentTurn) {
 		System.out.println("Success");
