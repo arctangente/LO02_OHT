@@ -37,7 +37,7 @@ public class ManageGame {
 		
 		Match match = new Match(player1, player2, player3);
 		
-		System.out.println("the players are ready :" + match.getPlayer() );
+		//System.out.println("the players are ready :" + match.getPlayer() );
 		//Finir la cr�ation des joueurs
 		
 		//Game in graphic
