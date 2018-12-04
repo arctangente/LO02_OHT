@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Trick {
 	// Attributs Principaux
 	private int idTrick;
-	private String[] arrIdProps;//La liste de composants pour faire le trick 
+	private String[] arrIdProps1;//La liste de composants pour faire le trick
+	private String[] arrIdProps2;
 	private int iPointTrick;//Le point gagnant si trick reussi
 	private String sIdTrick;//Le 's' est pour le type 'String'
 	private String sNameTrick;
@@ -13,9 +14,10 @@ public class Trick {
 	private String sPathFond;
 	
 	//Methode constructeur 
-	public Trick(int idTrick, String sIdTrick,String sNameTrick, String [] arrIdProps, int iPointTrick, String sPathFond) {
+	public Trick(int idTrick, String sIdTrick,String sNameTrick, String [] arrIdProps1, String [] arrIdProps2, int iPointTrick, String sPathFond) {
 		this.idTrick = idTrick;
-		this.arrIdProps = arrIdProps;
+		this.arrIdProps1 = arrIdProps1;
+		this.arrIdProps2 = arrIdProps2;
 		this.iPointTrick = iPointTrick;
 		this.sIdTrick = sIdTrick;
 		this.sNameTrick = sNameTrick;
@@ -48,8 +50,11 @@ public class Trick {
 	public void setsNameTrick(String sNameTrick) {
 		this.sNameTrick = sNameTrick;
 	}
-	public String[] getArrIdProps() {
-		return this.arrIdProps;
+	public String[] getArrIdProps1() {
+		return this.arrIdProps1;
+	}
+	public String[] getArrIdProps2() {
+		return this.arrIdProps2;
 	}
 	public int getiPointTrick() {
 		return this.iPointTrick;

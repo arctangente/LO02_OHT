@@ -19,6 +19,7 @@ public  abstract class Player extends Observable {
 	private int pointPlayer;
 	private ArrayList<Prop> arrPropinHand;
 	private ArrayList<Trick> arrTricksPerformed;
+	
 
 
 
@@ -65,9 +66,16 @@ public  abstract class Player extends Observable {
 	//get Props toString 
 
 	public String getsArrPropinHand() {
-		String sResult="";
+		String sResult ="";
 		for (int i=0; i<this.arrPropinHand.size();i++) {
-			sResult += this.arrPropinHand.get(i).getsNameProp() +", ";
+			sResult += this.arrPropinHand.get(i).getsNameProp()+", ";
+		}
+		return sResult;
+	}
+	public String[] getArrsIdPropinHand() {
+		String[] sResult = new String[2];
+		for (int i=0; i<this.arrPropinHand.size();i++) {
+			sResult[i]= this.arrPropinHand.get(i).getsIdProp();
 		}
 		return sResult;
 	}
@@ -168,15 +176,24 @@ public  abstract class Player extends Observable {
 	//performer les props verifie si les props joues correspondent aux prop necessaire pour le trick (contenus dans le array PropInTrick)
 	public  void performProps(Turn currentTurn)  {
 		int iCounter = 0;
-		for (int i=0;i<2;i++) {
-			String[] listPropInTrick = currentTurn.getTrickOnPerform().getArrIdProps();
-			String sIdProp = currentTurn.getArrPairOfProp().get(i).getsIdProp();
-			if(Arrays.asList(listPropInTrick).contains(sIdProp)) {
+		//for (int i=0;i<2;i++) {
+			String[] listPropInTrick1 = currentTurn.getTrickOnPerform().getArrIdProps1();
+			System.out.println(listPropInTrick1[0]);
+			String[] listPropInTrick2 = currentTurn.getTrickOnPerform().getArrIdProps2();
+			System.out.println(listPropInTrick2[0]);
+			String sIdProp1 = currentTurn.getArrPairOfProp().get(0).getsIdProp();
+			System.out.println(sIdProp1);
+			String sIdProp2 = currentTurn.getArrPairOfProp().get(1).getsIdProp();
+			System.out.println(sIdProp2);
+			if((Arrays.asList(listPropInTrick1).contains(sIdProp1)
+					||Arrays.asList(listPropInTrick1).contains(sIdProp2))
+					&&(Arrays.asList(listPropInTrick2).contains(sIdProp2)
+							||Arrays.asList(listPropInTrick2).contains(sIdProp1))) {
 				iCounter ++;
 			}
-		}
+		//}
 		Trick trickOnPerform = currentTurn.getTrickOnPerform();
-		if(iCounter ==2) {
+		if(iCounter ==1) {
 			this.successMatch(currentTurn);
 			if(trickOnPerform.getsIdTrick() == "otherHat" ) {
 				currentTurn.lastRound(true);
@@ -186,12 +203,14 @@ public  abstract class Player extends Observable {
 			this.forfeitMatch(currentTurn);
 			if(trickOnPerform.getsIdTrick() == "otherHat" ) {
 			for(int i=0;i<3;i++){
-				String sIdotherHatTrick = currentTurn.getMatch().getListPlayer().get(i).getsArrPropinHand();
-				if(Arrays.asList(sIdotherHatTrick).contains("The hat")) {
-					this.currentMatch.getListPlayer().get(i).addPointPlayer(-3); 
+				String[] sArrProp = currentTurn.getMatch().getListPlayer().get(i).getArrsIdPropinHand();
+				System.out.println(sArrProp[0]);
+				System.out.println(sArrProp[1]);
+				if(Arrays.asList(sArrProp).contains("hat")) {
+					currentTurn.getMatch().getListPlayer().get(i).addPointPlayer(-3); 
 				}
-				if(Arrays.asList(sIdotherHatTrick).contains("The other Rabbit")){
-					this.currentMatch.getListPlayer().get(i).addPointPlayer(-3); 
+				if(Arrays.asList(sArrProp).contains("otherrabbit")){
+					currentTurn.getMatch().getListPlayer().get(i).addPointPlayer(-3); 
 				}
 				currentTurn.lastRound(true);
 				}
@@ -209,13 +228,14 @@ public  abstract class Player extends Observable {
 
 	public void successMatch(Turn currentTurn) {
 		System.out.println("Success");
+		//this.addPointPlayer(-10);
 		this.addPointPlayer(currentTurn.getTrickOnPerform().getiPointTrick());
 		this.addArrTricksPerformed(currentTurn.getTrickOnPerform());
 		currentTurn.getMatch().getTrickPile().remove(currentTurn.getTrickOnPerform());
 		for (int i=0;i < 2;i++) {
 			this.getArrPropinHand().get(i).setIsFaceUp(true);
 		}
-		this.sleightOfHand( currentTurn);
+		this.sleightOfHand(currentTurn);
 	}
 
 
