@@ -17,6 +17,9 @@ public class EasyStategy implements stategy{
 		chooseTrick(player, currentTurn);
 		prepareProp(player, currentTurn);
 	}
+
+
+	//boucle for pour choisir le trick au hasard
 	public void chooseTrick(VirtualPlayer player, Turn currentTurn) {
 		TrickPile trickPile  = currentTurn.getMatch().getTrickPile();
 		Trick trickOnPerform = trickPile.get(trickPile.size()-1);//A Changer s'il n'y a pas de Trick dans TrickPile 
@@ -38,6 +41,9 @@ public class EasyStategy implements stategy{
 		System.out.println( player.getNamePlayer() + " chose this trick to perform : " + trickOnPerform.getsNameTrick());
 		
 	}
+
+
+	//random entre 0 et 1 pour choisir le prop, le joueur entre 0 et 3, et le prop a prendre
 	public void prepareProp(VirtualPlayer player, Turn currentTurn) {
 		Random rd = new Random();
 		int iIndexPropChosen =  rd.nextInt(1);
@@ -62,8 +68,8 @@ public class EasyStategy implements stategy{
 		System.out.println();
 	}
 
+	//retourne carte au hasard entre 0 et 1
 	public void forfeit(VirtualPlayer player, Turn currentTurn) {
-		
 		if(player.getPropsFaceUp().size()==0) {
 			Random rd = new Random();
 			int iIndexProp = rd.nextInt(1);
@@ -79,7 +85,8 @@ public class EasyStategy implements stategy{
 		}
 		System.out.println();
 	}
-	@Override
+
+	//au hasard
 	public void sleightOfHand(VirtualPlayer player, Turn currentTurn) {
 		player.setPropsFace(false);
 		Random rd = new Random();

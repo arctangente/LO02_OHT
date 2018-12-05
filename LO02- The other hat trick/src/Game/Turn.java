@@ -9,7 +9,7 @@ import Player.*;
 
 public class Turn {
 
-	//Attribute principales 	
+	//Attributs principaux
 	private Match match;
 	private Player player;
 	private Trick trickOnPerform;
@@ -17,7 +17,7 @@ public class Turn {
 	private ArrayList<Prop> arrPairOfProp = new ArrayList<Prop>();
 	private int iCounterLastRound;
 
-	//Methode constructeur 
+	//Methode constructeur qui appelle startrun()
 	public Turn (Match currentMatch,Player currentPlayer) {
 		this.match = currentMatch;
 		this.player = currentPlayer;
@@ -28,8 +28,7 @@ public class Turn {
 
 
 
-	//Methode pour commencer un nouveau tour 
-
+	//Methode pour commencer un nouveau tour qui appelle player.play()
 	public void startTurn() {
 		this.player.play(this);
 	}
@@ -39,19 +38,15 @@ public class Turn {
 
 	
 
-
+	//get et set la main du joueur
 	public ArrayList<Prop> getArrPairOfProp() {
 		return this.arrPairOfProp;
 	}
-
-
-	
-
 	public void setArrPairOfProp(ArrayList<Prop> arrPairOfProp) {
 		this.arrPairOfProp = arrPairOfProp;
 	}
 
-	//??
+	//get et set trick a performer
 	public Trick getTrickOnPerform() {
 		return this.trickOnPerform;
 	}

@@ -15,11 +15,7 @@ public class PhysicalPlayer extends Player{
 	}
 
 
-
-	//choisir si l'on perform ce trick ou celui d'apres
-
-	//Methode pour choisir un Trick 
-
+	//Methode pour choisir un Trick (print le trick et propose de le choisir ou le trick d'apres), print le trick choisi
 	public void chooseTrick(Turn currentTurn) {
 		TrickPile trickPile = currentTurn.getMatch().getTrickPile(); //Get le TrickPile actuel 
 		TrickDeck trickDesk = currentTurn.getMatch().getTrickDesk();// Get le TrickDesk actuel 
@@ -48,6 +44,8 @@ public class PhysicalPlayer extends Player{
 		
 	}
 
+
+
 	// choisir un prop a echanger, echanger avec un prop dans la main d'un autre joueur
 	public void prepareProps(Turn currentTurn) {
 		Scanner sc = new Scanner(System.in);
@@ -65,7 +63,11 @@ public class PhysicalPlayer extends Player{
 			Player p = (VirtualPlayer) currentTurn.getMatch().findPlayerById(2);
 			currentTurn.setPlayerChosen(p);
 		}
+
+
 		System.out.println("Player Chosen : " + currentTurn.getPlayerChosen().getNamePlayer());
+
+		//print les cartes faceup
 		if(currentTurn.getPlayerChosen().getPropsFaceUp().size()>0) {
 			System.out.println("The two props of the player chosen are : 0 or 1");
 			Player p = currentTurn.getPlayerChosen();
@@ -85,7 +87,6 @@ public class PhysicalPlayer extends Player{
 		 sReponse = sc.nextLine();
 		 int iIndexAnotherProp = Integer.parseInt(sReponse);
 		 Prop pAnotherPropChosen = currentTurn.getPlayerChosen().getArrPropinHand().get(iIndexAnotherProp);
-		 
 		 currentTurn.getPlayer().setArrPropinHand(iIndexPropChosen, pAnotherPropChosen);
 		 currentTurn.getPlayerChosen().setArrPropinHand(iIndexAnotherProp, pPropChosen);
 		 currentTurn.setArrPairOfProp(currentTurn.getPlayer().getArrPropinHand());
@@ -131,14 +132,14 @@ public class PhysicalPlayer extends Player{
 		}else if(this.getPropsFaceUp().size()==1) {
 			this.getArrPropinHand().get(0).setIsFaceUp(true);
 			this.getArrPropinHand().get(1).setIsFaceUp(true);
-			System.out.println("All of yours are face-up");
+			System.out.println("All of your cards are face-up");
 		}else {
 			System.out.println("There's no penalty for you");
 		}
 	}
 
 
-	//choisir une prop parmis les 3 (milieu, 2 de la main)
+	//sleight of hand prend la carte non distribuee dans le tableau collectionProp (la 7eme) et echange avec une des cartes
 	public void sleightOfHand(Turn currentTurn) {
 		
 		Scanner sc = new Scanner(System.in);
@@ -165,7 +166,7 @@ public class PhysicalPlayer extends Player{
 	}
 
 
-	//methode pour jouer
+	//methode pour jouer appelle choosetrick(), prepareprop(), performprop()
 	public void play(Turn currentTurn) {
 		this.chooseTrick(currentTurn);
 		this.prepareProps(currentTurn);

@@ -25,7 +25,7 @@ public  abstract class Player extends Observable {
 
 
 
-	//Constructeur 
+	//Constructeur du joueur
 
 	public Player(int idPlayer, String namePlayer, int agePlayer ) {
 		this.namePlayer = namePlayer;
@@ -148,7 +148,7 @@ public  abstract class Player extends Observable {
 	//Methode pour montrer les parametres
     //must delete in the end
 
-	//Test
+	//Methode qui montre les parametres des joueurs pour tester plus facilement
 		public String showParameter() {
 
 			String sResult = "";

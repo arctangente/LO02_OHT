@@ -17,7 +17,7 @@ public class Match extends Observable implements Runnable {
 
 	
 
-
+//constructeur : cree l'array player, definie le premier joueur qui joue, start le thread
 	public Match (PhysicalPlayer player1, VirtualPlayer player2, VirtualPlayer player3) {
 		this.listPlayer = new ArrayList<Player>();
 		this.listPlayer.add(player1);
@@ -44,7 +44,7 @@ public class Match extends Observable implements Runnable {
 	public ArrayList<Player> getListPlayer() {
 		return this.listPlayer;
 	}
-	
+	//get le joueur physique
 	public PhysicalPlayer getPhysicalPlayer() {
 		Player p = null;
 		for (int i=0; i<3;i++) {
@@ -53,7 +53,7 @@ public class Match extends Observable implements Runnable {
 		}
 		return (PhysicalPlayer) p;
 	}
-	
+	//get les joueurs virtuels
 	public ArrayList<VirtualPlayer> getVirtualPlayers() {
 		ArrayList<VirtualPlayer> arrVirPl = new ArrayList<VirtualPlayer>();
 		for (int i=0; i<3;i++) {
@@ -63,21 +63,22 @@ public class Match extends Observable implements Runnable {
 		return arrVirPl;
 	}
 
+	//get et set le trick deck
 	public TrickDeck getTrickDesk() {
 		return trickDesk;
 	}
-
 	public void setTrickDesk(TrickDeck trickDesk) {
 		this.trickDesk = trickDesk;
 	}
 
+	//get et set le trickpile
 	public TrickPile getTrickPile() {
 		return trickPile;
 	}
-
 	public void setTrickPile(TrickPile trickPile) {
 		this.trickPile = trickPile;
 	}
+
 
 	public CollectionProps getCollectionProps() {
 		return collectionProps;
@@ -90,11 +91,13 @@ public class Match extends Observable implements Runnable {
 		}
 		return sPlayers;
 	}
-	 
+
+	//enleve prop de la collection
 	public void removeProp(int idProp) {
 		this.collectionProps.remove(idProp);
 	}
-	
+
+
 	public Player findPlayerById (int id) {
 		int iResult = -1;
 		for(int i=0;i<this.listPlayer.size();i++) {
@@ -106,11 +109,18 @@ public class Match extends Observable implements Runnable {
 		return this.listPlayer.get(iResult);
 		
 	}
+
+
+	//code du thread
 	public void start() {
 		Thread myThreat = new Thread(this);
 		myThreat.start();
 	}
 
+	// 1. le run lit le xml, cree les collections et met les cartes dans les collections de prop et trick
+	// 2. le run montre les charac des joueurs (nom, age, carte dans leurs mains pour tester facilement)
+	// 3. le jeu commence, montre le trick a jouer, cree un tour
+	// 4. le run gere si la partie doit etre terminee
 	public void run() {
 
 		InstancieurXml readCard = new InstancieurXml();
@@ -153,11 +163,11 @@ public class Match extends Observable implements Runnable {
 		}
 		
 	}
+
+	// get et set isEnd
 	public Boolean getIsEnd() {
 		return this.isEnd;
 	}
-
-
 	public void setIsEnd(Boolean isEnd) {
 		this.isEnd = isEnd;
 	}

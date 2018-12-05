@@ -13,7 +13,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-//Ce class a pour but de générer les cartes par un fichier Cards.xml
+//Cette class a pour but de generer les cartes par un fichier Cards.xml
 public class InstancieurXml {
 
 	private DocumentBuilderFactory dbf ;

@@ -23,10 +23,10 @@ public class ManageGame {
 		//Creer l'objet "Joueur Reel"
 		PhysicalPlayer player1 = new PhysicalPlayer(0, sNom1, iAge1);
 		
-		//D�finir le strategy du jeu 
+		//Definir le strategy du jeu
 		stategy stategy = new EasyStategy();
-		//Cr�er deux autres Joueurs Virtuels qui s'appellent VP1 et VP2 
-		//Ses �ge sont choisies al�atoire entre 1 et 50 
+		//Creer deux autres Joueurs Virtuels qui s'appellent VP1 et VP2
+		//leurs age sont choisis aleatoirement entre 1 et 50
 		String sName2 = "VP1";
 		int iAge2 = (int) (Math.random()*50 +1);
 		VirtualPlayer player2 = new VirtualPlayer(1, sName2, iAge2,stategy);
@@ -38,7 +38,7 @@ public class ManageGame {
 		Match match = new Match(player1, player2, player3);
 		
 		//System.out.println("the players are ready :" + match.getPlayer() );
-		//Finir la cr�ation des joueurs
+		//Finir la creation des joueurs
 		
 		//Game in graphic
 		
